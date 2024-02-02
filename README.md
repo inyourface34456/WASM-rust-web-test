@@ -1,0 +1,1 @@
+# WASM-rust-web-test
