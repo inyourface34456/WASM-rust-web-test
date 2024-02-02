@@ -74,11 +74,12 @@ function passStringToWasm0(arg, malloc, realloc) {
 }
 /**
 * @param {string} name
+* @param {number} num
 */
-export function greet(name) {
+export function greet(name, num) {
     const ptr0 = passStringToWasm0(name, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
     const len0 = WASM_VECTOR_LEN;
-    wasm.greet(ptr0, len0);
+    wasm.greet(ptr0, len0, num);
 }
 
 async function __wbg_load(module, imports) {
@@ -115,8 +116,8 @@ async function __wbg_load(module, imports) {
 function __wbg_get_imports() {
     const imports = {};
     imports.wbg = {};
-    imports.wbg.__wbg_alert_4ab18a77ca2d75c0 = function(arg0, arg1) {
-        alert(getStringFromWasm0(arg0, arg1));
+    imports.wbg.__wbg_log_506e0156c70174cd = function(arg0, arg1) {
+        console.log(getStringFromWasm0(arg0, arg1));
     };
 
     return imports;
