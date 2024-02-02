@@ -1,0 +1,14 @@
+{
+  "name": "wasm_pack",
+  "version": "0.1.0",
+  "files": [
+    "wasm_pack_bg.wasm",
+    "wasm_pack.js",
+    "wasm_pack.d.ts"
+  ],
+  "module": "wasm_pack.js",
+  "types": "wasm_pack.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
