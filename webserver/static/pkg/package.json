@@ -1,6 +1,12 @@
 {
   "name": "wasm_pack",
+  "description": "something that i am making",
   "version": "0.1.0",
+  "license": "Cargo.lock",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inyourface34456/WASM-rust-web-test"
+  },
   "files": [
     "wasm_pack_bg.wasm",
     "wasm_pack.js",

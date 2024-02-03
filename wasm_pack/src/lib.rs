@@ -1,15 +1,15 @@
 use wasm_bindgen::prelude::*;
+use web_sys::*;
+use web_sys::js_sys::*;
 
-#[wasm_bindgen]
-extern {
-    pub fn alert(s: &str);
+fn to_array(data: String) -> Array {
+    let array = Array::new();
 
-    #[wasm_bindgen(js_namespace = console)]
-    pub fn log(message: &str);
-}
+    for i in data.chars() {
+        array.push(&JsValue::from_str(String::from(i).as_ref()));
+    } 
 
-macro_rules! log {
-    ($($t:tt)*) => (log(&format_args!($($t)*).to_string()))
+    array
 }
 
 #[wasm_bindgen]
@@ -17,8 +17,8 @@ pub fn greet(name: &str, num: i32) {
     let mut count = 0;
 
     loop {
-        log!("{}: {}", name, count);
-        
+        console::log_1(&JsValue::from_str(format!("{}: {}", name, count).as_ref()));
+
         if count > num {
             break;
         }
@@ -26,3 +26,4 @@ pub fn greet(name: &str, num: i32) {
         count += 1;
     }
 }
+
