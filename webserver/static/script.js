@@ -1,4 +1,3 @@
-import init, { greet } from "./pkg/wasm_pack.js";
-init().then(() => {
-    greet("WebAssembly", 20);
-});
+import init from "./pkg/wasm_pack.js";
+
+init()

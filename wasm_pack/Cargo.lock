@@ -128,6 +128,7 @@ checksum = "4d91413b1c31d7539ba5ef2451af3f0b833a005eb27a631cec32bc0635a8602b"
 name = "wasm_pack"
 version = "0.1.0"
 dependencies = [
+ "js-sys",
  "wasm-bindgen",
  "web-sys",
 ]
